@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>English Vocabulary Tools</title>
+<style>
+  :root{
+    --ink:#2b1a12;
+    --accent:#8a2f22;
+    --paper:#faf6ef;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    padding:32px 16px 60px;
+  }
+  .wrap{
+    max-width:820px;
+    margin:0 auto;
+  }
+  h1{
+    font-size:1.6rem;
+    margin:0 0 4px;
+  }
+  p.sub{
+    color:#6b5b4d;
+    margin:0 0 32px;
+    font-size:0.95rem;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
+    gap:18px;
+  }
+  .card{
+    background:var(--card);
+    border-radius:14px;
+    padding:20px;
+    text-decoration:none;
+    color:var(--ink);
+    box-shadow:0 1px 4px rgba(0,0,0,0.08);
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 4px 14px rgba(0,0,0,0.12);
+  }
+  .card .emoji{font-size:2rem;}
+  .card .title{font-weight:700;font-size:1.05rem;}
+  .card .desc{font-size:0.85rem;color:#6b5b4d;}
+  .placeholder{
+    border:2px dashed #d8cabb;
+    border-radius:14px;
+    padding:20px;
+    color:#9c8c7d;
+    font-size:0.85rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+  }
+  footer{
+    margin-top:40px;
+    font-size:0.78rem;
+    color:#9c8c7d;
+    text-align:center;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🗣️ English Vocabulary Tools</h1>
+  <p class="sub">Click a character below to start learning. Tap the circles on each picture to hear the word and an example sentence.</p>
+
+  <div class="grid">
+    <a class="card" href="body_parts_vocabulary.html">
+      <div class="emoji">🧑</div>
+      <div class="title">Body Parts</div>
+      <div class="desc">Hair, ear, nose, elbow, knee, and more — click to hear each word.</div>
+    </a>
+
+    <a class="card" href="surfer_dude_vocabulary.html">
+      <div class="emoji">🏄</div>
+      <div class="title">Surfer Dude</div>
+      <div class="desc">Bald head, sunglasses, surfboard, shorts, and more beach gear.</div>
+    </a>
+
+    <a class="card" href="surfing_obaachama_vocabulary.html">
+      <div class="emoji">🌺</div>
+      <div class="title">Surfing Obaachama</div>
+      <div class="desc">Shaka sign, flip-flops, Hawaiian shirt, puka shell earrings, and more.</div>
+    </a>
+
+    <div class="placeholder">More characters coming soon…</div>
+  </div>
+
+  <footer>Made for learning English vocabulary • click any circle to hear it spoken aloud</footer>
+</div>
+</body>
+</html>
