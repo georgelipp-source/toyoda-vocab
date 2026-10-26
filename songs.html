@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Songs | Toyoda English</title>
+<style>
+  :root{ --ink:#2b1a12; --accent:#8a2f22; --paper:#faf6ef; --card:#ffffff; --muted:#6b5b4d; }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; min-height:100vh; background:var(--paper); color:var(--ink);
+        font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Segoe UI",Roboto,sans-serif; }
+  header{ text-align:center; padding:28px 16px 8px; }
+  header h1{ margin:0; font-size:1.8rem; color:var(--accent); }
+  header p{ margin:6px 0 0; color:var(--muted); }
+  a.home{ display:inline-block; margin-top:12px; background:var(--accent); color:#fff;
+          text-decoration:none; padding:8px 16px; border-radius:999px; font-weight:600; }
+  main{ max-width:820px; margin:0 auto; padding:16px; display:grid; gap:24px; }
+  .song{ background:var(--card); border-radius:16px; padding:16px;
+         box-shadow:0 1px 4px rgba(0,0,0,.08); scroll-margin-top:12px; }
+  .song h2{ margin:0; font-size:1.3rem; }
+  .song p{ margin:4px 0 12px; color:var(--muted); font-style:italic; }
+  video{ width:100%; border-radius:10px; background:#000; display:block; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🎵 Songs</h1>
+  <p>Watch, listen and sing along!</p>
+  <a class="home" href="./">&larr; Home</a>
+</header>
+
+<main id="songs"></main>
+
+<script>
+  // ===== The song list =====
+  // Each line: an id, the title people see, a short subtitle, and the exact video file name.
+  // The videos live in the "songs" folder. To add a song, copy a line and change the parts.
+  const SONGS = [
+    { id:"im-strong", title:"I'm Strong, They're Wrong", sub:"The Obaachan of Hatoya",            file:"im-strong-theyre-wrong.mp4" },
+    { id:"i-wish",    title:"I Wish",                    sub:"Michie, Sakura, and Kirikabuyama",  file:"i-wish.mp4" },
+    { id:"ichiro",    title:"Ichiro and Bombasto",       sub:"",                                  file:"ichiro-and-bombasto.mp4" },
+    { id:"kura",      title:"Creature in the Kura",      sub:"Baku, Eat My Dreams",               file:"creature-in-the-kura.mp4" },
+    { id:"mokuba",    title:"Mokuba Magic",              sub:"Three Cups of Friendship",          file:"mokuba-magic.mp4" },
+    { id:"mice",      title:"Mice in the Rice",          sub:"...and Nothing",                    file:"mice-in-the-rice.mp4" },
+  ];
+
+  const main = document.getElementById("songs");
+  SONGS.forEach(s => {
+    const card = document.createElement("section");
+    card.className = "song";
+    card.id = s.id;
+    const h = document.createElement("h2");
+    h.textContent = s.title;
+    const p = document.createElement("p");
+    p.textContent = s.sub;
+    const v = document.createElement("video");
+    v.src = "songs/" + s.file;
+    v.controls = true;
+    v.playsInline = true;
+    v.preload = "metadata";
+    card.append(h, p, v);
+    main.append(card);
+  });
+  // Jump to the song tapped on the home page
+  if (location.hash) {
+    const t = document.getElementById(location.hash.slice(1));
+    if (t) t.scrollIntoView();
+  }
+</script>
+</body>
+</html>
