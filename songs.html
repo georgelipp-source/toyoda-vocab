@@ -35,7 +35,7 @@
 <script>
   // ===== The song list =====
   // Each line: an id, the title people see, a short subtitle, and the exact video file name.
-  // The videos live in the "songs" folder. To add a song, copy a line and change the parts.
+  // The videos live in the "Songs" folder (capital S). To add a song, copy a line and change the parts.
   const SONGS = [
     { id:"im-strong", title:"I'm Strong, They're Wrong", sub:"The Obaachan of Hatoya",            file:"im-strong-theyre-wrong.mp4" },
     { id:"i-wish",    title:"I Wish",                    sub:"Michie, Sakura, and Kirikabuyama",  file:"i-wish.mp4" },
@@ -55,7 +55,7 @@
     const p = document.createElement("p");
     p.textContent = s.sub;
     const v = document.createElement("video");
-    v.src = "songs/" + s.file;
+    v.src = "Songs/" + s.file;
     v.controls = true;
     v.playsInline = true;
     v.preload = "metadata";
